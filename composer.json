@@ -1,0 +1,14 @@
+{
+    "name": "coolcat/brain-games",
+    "description": "Project Lvl 1",
+    "authors": [
+        {
+            "name": "Legomegger",
+            "email": "legomegakst@gmail.com"
+        }
+    ],
+    "require": {},
+    "bin": [
+        "bin/brain-games"
+    ]
+}
