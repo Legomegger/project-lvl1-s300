@@ -1,0 +1,12 @@
+{
+    "name": "322coolcat/projectbraingames",
+    "description": "Brain Games Project, Level 1, July 2 2018",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Legomegger",
+            "email": "legomegakst@gmail.com"
+        }
+    ],
+    "require": {}
+}
