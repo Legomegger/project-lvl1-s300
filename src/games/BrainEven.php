@@ -4,18 +4,10 @@ namespace BrainGames\BrainEven;
 use function \cli\line;
 use function \cli\prompt;
 
-function generateNumber()
+const END_GAME_FLAG = 0;
+function isNumberEven($number)
 {
-    return rand(1, 15);
-}
-function isNumberEven($question)
-{
-    return $question % 2 == 0;
-}
-    
-function isAnswerCorrect($userAnswer, $correctAnswer)
-{
-    return $userAnswer == $correctAnswer;
+    return $number % 2 == 0;
 }
 function run()
 {
@@ -23,21 +15,21 @@ function run()
     line("Answer \"yes\" if number even, otherwise answer \"no\"");
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    $counter = 3;
-    while ($counter > 0) {
-        $question = generateNumber();
+    for ($counter = 3; $counter > END_GAME_FLAG; $counter -= 1) {
+        $question = rand(1, 15);
         line("Question: {$question}");
         $userAnswer = prompt("Your answer: ");
         $correctAnswer = isNumberEven($question) ? "yes" : "no";
         //answerChecker($userAnswer, $correctAnswer, $name);
-        if (isAnswerCorrect($userAnswer, $correctAnswer)) {
+        if ($userAnswer == $correctAnswer) {
             line("Correct!");
-            $counter -= 1;
         } else {
             line("{$userAnswer} was incorrect. Correct was {$correctAnswer}");
             line("Let's try again, %s", $name);
-            return 0;
+            return;
         }
     }
-    line("Congratulations! {$name}. You Win!");
+    if ($counter === 0) {
+        line("Congratulations! {$name}. You Win!");
+    }
 }
