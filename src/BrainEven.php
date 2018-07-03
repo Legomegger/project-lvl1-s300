@@ -33,8 +33,7 @@ function run()
         if (isAnswerCorrect($userAnswer, $correctAnswer)) {
             line("Correct!");
             $counter -= 1;
-        } 
-        else {
+        } else {
             line("{$userAnswer} was incorrect. Correct was {$correctAnswer}");
             line("Let's try again, %s", $name);
             return 0;
