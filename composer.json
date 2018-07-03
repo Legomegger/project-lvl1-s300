@@ -10,6 +10,12 @@
     "require": {
         "wp-cli/php-cli-tools": "*"
     },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*"
+    },
+    "scripts": {
+        "phpcs": "phpcs"
+    },
     "bin": [
         "bin/brain-games"
     ],
