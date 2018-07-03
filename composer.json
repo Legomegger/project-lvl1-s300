@@ -10,6 +10,11 @@
     "require": {
         "wp-cli/php-cli-tools": "*"
     },
+    "keywords": [
+        "cli",
+        "hexlet",
+        "project"
+    ],
     "require-dev": {
         "squizlabs/php_codesniffer": "*"
     },
