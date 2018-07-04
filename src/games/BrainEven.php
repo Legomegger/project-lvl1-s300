@@ -20,7 +20,6 @@ function run()
         line("Question: {$question}");
         $userAnswer = prompt("Your answer: ");
         $correctAnswer = isNumberEven($question) ? "yes" : "no";
-        //answerChecker($userAnswer, $correctAnswer, $name);
         if ($userAnswer == $correctAnswer) {
             line("Correct!");
         } else {
