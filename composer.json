@@ -24,13 +24,16 @@
     "bin": [
         "bin/brain-games",
         "bin/brain-even",
-        "bin/brain-calc"
+        "bin/brain-calc",
+        "bin/brain-black"
     ],
     "autoload": {
         "files": [
             "src/Cli.php",
             "src/games/BrainEven.php",
-            "src/games/BrainCalc.php"
+            "src/games/BrainCalc.php",
+            "src/Engine.php",
+            "src/games/Black.php"
         ]
     }
 }
