@@ -12,8 +12,7 @@ function getOperator($array)
 function getCorrectAnswer($firstNumber, $operator, $secondNumber)
 {
     $result = 0;
-    switch ($operator)
-    {
+    switch ($operator) {
         case "+":
             return $firstNumber + $secondNumber;
         case "-":
@@ -36,13 +35,12 @@ function run()
         line("{$firstNumber} {$operator} {$secondNumber}");
         $answer = prompt('Your answer');
         $correctAnswer = getCorrectAnswer($firstNumber, $operator, $secondNumber);
-        if ($correctAnswer === (int)$answer)
-        {
+        if ($correctAnswer === (int)$answer) {
             line("Correct!");
         } else {
             line("Incorrect! Correct was {$correctAnswer}");
             line("Let's try again {$name}");
-            return;   
+            return;
         }
     }
     line("Congratulations {$name}!");
