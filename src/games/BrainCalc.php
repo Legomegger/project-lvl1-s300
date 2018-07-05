@@ -5,13 +5,13 @@ use function \cli\line;
 use function \cli\prompt;
 
 const END_GAME_FLAG = 3;
-function getOperator($array)
+function run()
 {
-    return $array[array_rand($array)];
-}
-function getCorrectAnswer($firstNumber, $operator, $secondNumber)
-{
-    $result = 0;
+    $getOperator = function($array) {
+        return $array[array_rand($array)];
+    };
+    $getCorrectAnswer = function($firstNumber, $operator, $secondNumber) {
+        $result = 0;
     switch ($operator) {
         case "+":
             return $firstNumber + $secondNumber;
@@ -20,28 +20,17 @@ function getCorrectAnswer($firstNumber, $operator, $secondNumber)
         case "*":
             return $firstNumber * $secondNumber;
     }
-}
-function run()
-{
-    line('Welcome to the Brain Game!');
-    line("What is the result of the expression?");
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    for ($counter = 0; $counter < END_GAME_FLAG; $counter += 1) {
+    };
+    $gameLogic = function() use ($getOperator, $getCorrectAnswer) {
         $arrayOfOperators = ["+", "-", "*", "+", "-", "*", "+", "-", "*", "+"];
         $firstNumber = rand(1, 30);
         $secondNumber = rand(1, 30);
-        $operator = getOperator($arrayOfOperators);
-        line("{$firstNumber} {$operator} {$secondNumber}");
-        $answer = prompt('Your answer');
-        $correctAnswer = getCorrectAnswer($firstNumber, $operator, $secondNumber);
-        if ($correctAnswer === (int)$answer) {
-            line("Correct!");
-        } else {
-            line("Incorrect! Correct was {$correctAnswer}");
-            line("Let's try again {$name}");
-            return;
-        }
-    }
-    line("Congratulations {$name}!");
+        $operator = $getOperator($arrayOfOperators);
+        $data = [];
+        $data["rules"] = "Whats the result of the expression?";
+        $data["question"] = "{$firstNumber} {$operator} {$secondNumber}";
+        $data["correctAnswer"] = $getCorrectAnswer($firstNumber, $operator, $secondNumber);
+        return $data;
+    };
+    \BrainGames\Engine\run($gameLogic);
 }

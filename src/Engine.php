@@ -20,14 +20,14 @@ function getCorrectAnswer($gameLogic)
 function run($gameLogic)
 {
     line('Welcome to the Brain Game!');
-    line(getGameRules($gameLogic));
+    line(getGameRules($gameLogic()));
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     for ($counter = 0; $counter < END_GAME_FLAG; $counter += 1) {
-        $question = getQuestion($gameLogic);
-        line("Question: {$question}");
+        $data = $gameLogic();
+        line("Question: %s", getQuestion($data));
         $userAnswer = prompt("Your answer: ");
-        $correctAnswer = getCorrectAnswer($gameLogic);
+        $correctAnswer = getCorrectAnswer($data);
         if ($userAnswer == $correctAnswer) {
             line("Correct!");
         } else {
