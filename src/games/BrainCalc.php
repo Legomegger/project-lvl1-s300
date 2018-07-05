@@ -7,21 +7,21 @@ use function \cli\prompt;
 const END_GAME_FLAG = 3;
 function run()
 {
-    $getOperator = function($array) {
+    $getOperator = function ($array) {
         return $array[array_rand($array)];
     };
-    $getCorrectAnswer = function($firstNumber, $operator, $secondNumber) {
+    $getCorrectAnswer = function ($firstNumber, $operator, $secondNumber) {
         $result = 0;
-    switch ($operator) {
-        case "+":
-            return $firstNumber + $secondNumber;
-        case "-":
-            return $firstNumber - $secondNumber;
-        case "*":
-            return $firstNumber * $secondNumber;
-    }
+        switch ($operator) {
+            case "+":
+                return $firstNumber + $secondNumber;
+            case "-":
+                return $firstNumber - $secondNumber;
+            case "*":
+                return $firstNumber * $secondNumber;
+        }
     };
-    $gameLogic = function() use ($getOperator, $getCorrectAnswer) {
+    $gameLogic = function () use ($getOperator, $getCorrectAnswer) {
         $arrayOfOperators = ["+", "-", "*", "+", "-", "*", "+", "-", "*", "+"];
         $firstNumber = rand(1, 30);
         $secondNumber = rand(1, 30);

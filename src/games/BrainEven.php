@@ -10,7 +10,7 @@ function isNumberEven($number)
 }
 function run()
 {
-    $gameLogic = function() {
+    $gameLogic = function () {
         $data = [];
         $data["rules"] = "Answer \"yes\" if number even, otherwise answer \"no\"";
         $data["question"] = rand(1, 15);
