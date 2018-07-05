@@ -4,13 +4,14 @@ namespace BrainGames\BrainGcd;
 use function \cli\line;
 use function \cli\prompt;
 
-function findGcd ($a, $b) {
+function findGcd($a, $b)
+{
     if ($b === 0) {
         return $a;
     } else {
         return findGcd($b, $a % $b);
     }
-};
+}
 function run()
 {
     $gameLogic = function () {
