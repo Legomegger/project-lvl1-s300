@@ -10,14 +10,14 @@ const RULE = "Balance the given number.";
 function isBalanced($num)
 {
     $arrayNumber = array_map('intval', str_split($num));
-    if (max($arrayNumber) - min($arrayNumber) <= 1)
-    {
+    if (max($arrayNumber) - min($arrayNumber) <= 1) {
         return true;
-    } 
+    }
     return false;
 }
 
-function balanceNumber($number) {
+function balanceNumber($number)
+{
     $arrayOfNumbers = array_map('intval', str_split($number));
     while (max($arrayOfNumbers) - min($arrayOfNumbers) > 1) {
         $arrayOfNumbers[array_search(min($arrayOfNumbers), $arrayOfNumbers)] += 1;
