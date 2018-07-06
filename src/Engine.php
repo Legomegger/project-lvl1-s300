@@ -9,7 +9,7 @@ const END_GAME = 3;
 function runGame($getGameData, $rule)
 {
     line('Welcome to the Brain Game!');
-    line($rule());
+    line($rule);
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
 

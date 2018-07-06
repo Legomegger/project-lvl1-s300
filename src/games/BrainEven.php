@@ -5,6 +5,8 @@ use function \cli\line;
 use function \cli\prompt;
 use function \BrainGames\Engine\runGame;
 
+const RULE = "Balance the given number.";
+
 function isNumberEven($number)
 {
     return $number % 2 === 0;
@@ -12,10 +14,6 @@ function isNumberEven($number)
 
 function run()
 {
-    $rule = function () {
-        return "Answer \"yes\" if number even, otherwise answer \"no\"";
-    };
-
     $getGameData = function () {
         $data = [];
         $data["question"] = rand(1, 15);
@@ -23,5 +21,5 @@ function run()
         return $data;
     };
 
-    runGame($getGameData, $rule);
+    runGame($getGameData, RULE);
 }

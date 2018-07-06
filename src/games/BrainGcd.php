@@ -5,20 +5,18 @@ use function \cli\line;
 use function \cli\prompt;
 use function \BrainGames\Engine\runGame;
 
+const RULE = "Find the greatest common divisor of given numbers.";
+
 function findGcd($a, $b)
 {
     if ($b === 0) {
         return $a;
     }
-        return findGcd($b, $a % $b);
+    return findGcd($b, $a % $b);
 }
 
 function run()
 {
-    $rule = function () {
-        return "Find the greatest common divisor of given numbers.";
-    };
-
     $getGameData = function () {
         $data = [];
         $number1 = rand(1, 200);
@@ -28,5 +26,5 @@ function run()
         return $data;
     };
 
-    runGame($getGameData, $rule);
+    runGame($getGameData, RULE);
 }

@@ -6,6 +6,7 @@ use function \cli\prompt;
 use function \BrainGames\Engine\runGame;
 
 const END_GAME = 3;
+const RULE = "What's the result of the expression?";
 
 function run()
 {
@@ -27,10 +28,6 @@ function run()
         }
     };
 
-    $rule = function () {
-        return "Whats the result of the expression?";
-    };
-
     $getGameData = function () use ($getOperator, $getCorrectAnswer, $arrayOfOperators) {
         $firstNumber = rand(1, 30);
         $secondNumber = rand(1, 30);
@@ -41,5 +38,5 @@ function run()
         return $data;
     };
 
-    runGame($getGameData, $rule);
+    runGame($getGameData, RULE);
 }
