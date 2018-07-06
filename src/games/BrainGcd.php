@@ -3,25 +3,30 @@ namespace BrainGames\BrainGcd;
 
 use function \cli\line;
 use function \cli\prompt;
+use function \BrainGames\Engine\runGame;
 
 function findGcd($a, $b)
 {
     if ($b === 0) {
         return $a;
-    } else {
-        return findGcd($b, $a % $b);
     }
+        return findGcd($b, $a % $b);
 }
+
 function run()
 {
-    $gameLogic = function () {
+    $rule = function() {
+        return "Find the greatest common divisor of given numbers.";
+    };
+
+    $getGameData = function () {
         $data = [];
-        $data["rules"] = "Find the greatest common divisor of given numbers.";
         $number1 = rand(1, 200);
         $number2 = rand(1, 200);
         $data["question"] = "{$number1} {$number2}";
         $data["correctAnswer"] = findGcd($number1, $number2);
         return $data;
     };
-    \BrainGames\Engine\run($gameLogic);
+
+    runGame($getGameData, $rule);
 }

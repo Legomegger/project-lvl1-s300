@@ -4,30 +4,20 @@ namespace BrainGames\Engine;
 use function \cli\line;
 use function \cli\prompt;
 
-const END_GAME_FLAG = 3;
-function getGameRules($gameLogic)
-{
-    return $gameLogic["rules"];
-}
-function getQuestion($gameLogic)
-{
-    return $gameLogic["question"];
-}
-function getCorrectAnswer($gameLogic)
-{
-    return $gameLogic["correctAnswer"];
-}
-function run($gameLogic)
+const END_GAME = 3;
+
+function runGame($getGameData, $rule)
 {
     line('Welcome to the Brain Game!');
-    line(getGameRules($gameLogic()));
+    line($rule());
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    for ($counter = 0; $counter < END_GAME_FLAG; $counter += 1) {
-        $data = $gameLogic();
-        line("Question: %s", getQuestion($data));
+
+    for ($counter = 0; $counter < END_GAME; $counter += 1) {
+        $data = $getGameData();
+        line("Question: %s", $data["question"]);
         $userAnswer = prompt("Your answer: ");
-        $correctAnswer = getCorrectAnswer($data);
+        $correctAnswer = $data["correctAnswer"];
         if ($userAnswer == $correctAnswer) {
             line("Correct!");
         } else {
