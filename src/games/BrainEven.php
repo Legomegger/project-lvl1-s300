@@ -12,7 +12,7 @@ function isNumberEven($number)
 
 function run()
 {
-    $rule = function() {
+    $rule = function () {
         return "Answer \"yes\" if number even, otherwise answer \"no\"";
     };
 
@@ -23,5 +23,5 @@ function run()
         return $data;
     };
 
-   runGame($getGameData, $rule);
+    runGame($getGameData, $rule);
 }

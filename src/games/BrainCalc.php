@@ -5,7 +5,6 @@ use function \cli\line;
 use function \cli\prompt;
 use function \BrainGames\Engine\runGame;
 
-
 const END_GAME = 3;
 
 function run()
@@ -28,7 +27,7 @@ function run()
         }
     };
 
-    $rule = function() {
+    $rule = function () {
         return "Whats the result of the expression?";
     };
 

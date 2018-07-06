@@ -15,7 +15,7 @@ function findGcd($a, $b)
 
 function run()
 {
-    $rule = function() {
+    $rule = function () {
         return "Find the greatest common divisor of given numbers.";
     };
 
