@@ -26,7 +26,8 @@
         "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
-        "bin/brain-balance"
+        "bin/brain-balance",
+        "bin/brain-progression"
     ],
     "autoload": {
         "files": [
@@ -35,7 +36,8 @@
             "src/games/BrainCalc.php",
             "src/Engine.php",
             "src/games/BrainGcd.php",
-            "src/games/BrainBalance.php"
+            "src/games/BrainBalance.php",
+            "src/games/BrainProgression.php"
         ]
     }
 }
