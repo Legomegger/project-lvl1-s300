@@ -19,16 +19,10 @@ function run()
         return $arrayOfNumbers;
     };
 
-    $hideRandomValue = function ($array) {
-        $hider = rand(1, 10);
-        $hiddenIndex = $array[$hider];
-        return $hiddenIndex;
-    };
-
-    $getGameData = function () use ($createProgression, $hideRandomValue) {
+    $getGameData = function () use ($createProgression, $getRandomValue) {
         $data = [];
         $progression = $createProgression();
-        $hiddenValue = $hideRandomValue($progression);
+        $hiddenValue = $progression[rand(1, 10)];
         $progression[array_search($hiddenValue, $progression)] = "..";
         $question = implode(" ", $progression);
         $data["question"] = "{$question}";
