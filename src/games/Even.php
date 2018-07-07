@@ -1,5 +1,5 @@
 <?php
-namespace BrainGames\BrainEven;
+namespace BrainGames\Even;
 
 use function \cli\line;
 use function \cli\prompt;
@@ -7,16 +7,17 @@ use function \BrainGames\Engine\runGame;
 
 const RULE = "Balance the given number.";
 
+function isNumberEven($number)
+{
+    return $number % 2 == 0;
+}
+
 function run()
 {
-    $isNumberEven = function ($number) {
-        return $number % 2 == 0;
-    };
-
-    $getGameData = function () use ($isNumberEven) {
+    $getGameData = function () {
         $data = [];
         $data["question"] = rand(1, 15);
-        $data["correctAnswer"] = $isNumberEven($data["question"]) ? "yes" : "no";
+        $data["correctAnswer"] = isNumberEven($data["question"]) ? "yes" : "no";
         return $data;
     };
 
