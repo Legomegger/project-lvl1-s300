@@ -23,7 +23,7 @@ function run()
     $getGameData = function () use ($createProgression, $getRandomValue) {
         $data = [];
         $progression = $createProgression();
-        $hiddenValue = $progression[rand(1, 10)];
+        $hiddenValue = $progression[rand(0, 9)];
         $progression[array_search($hiddenValue, $progression)] = "..";
         $question = implode(" ", $progression);
         $data["question"] = "{$question}";
