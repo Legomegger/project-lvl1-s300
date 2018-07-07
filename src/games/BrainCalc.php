@@ -5,12 +5,12 @@ use function \cli\line;
 use function \cli\prompt;
 use function \BrainGames\Engine\runGame;
 
-const END_GAME = 3;
 const RULE = "What's the result of the expression?";
+const OPERATORS = ["+", "-", "*"];
 
 function run()
 {
-    $arrayOfOperators = ["+", "-", "*"];
+    $arrayOfOperators = OPERATORS;
 
     $getOperator = function ($array) {
         return $array[array_rand($array)];
