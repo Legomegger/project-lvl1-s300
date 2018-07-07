@@ -16,7 +16,7 @@ function runGame($getGameData, $rule)
     for ($counter = 0; $counter < END_GAME; $counter += 1) {
         $data = $getGameData();
         line("Question: %s", $data["question"]);
-        $userAnswer = prompt("Your answer: ");
+        $userAnswer = prompt("Your answer");
         $correctAnswer = $data["correctAnswer"];
         if ($userAnswer == $correctAnswer) {
             line("Correct!");
