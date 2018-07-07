@@ -28,7 +28,7 @@ function run()
         return implode("", $arrayOfNumbers);
     };
 
-    $getGameData = function () use ($isBalanced, $balanceNumber){
+    $getGameData = function () use ($isBalanced, $balanceNumber) {
         $data = [];
         $number = rand(10, 9999);
         $data["question"] = "{$number}";
