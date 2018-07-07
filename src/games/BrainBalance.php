@@ -9,15 +9,6 @@ const RULE = "Balance the given number.";
 
 function run()
 {
-
-    $isBalanced = function ($num) {
-        $arrayNumber = array_map('intval', str_split($num));
-        if (max($arrayNumber) - min($arrayNumber) <= 1) {
-            return true;
-        }
-        return false;
-    };
-
     $balanceNumber = function ($number) {
         $arrayOfNumbers = array_map('intval', str_split($number));
         while (max($arrayOfNumbers) - min($arrayOfNumbers) > 1) {
@@ -32,7 +23,7 @@ function run()
         $data = [];
         $number = rand(10, 9999);
         $data["question"] = "{$number}";
-        $data["correctAnswer"] = $isBalanced($number) ? $number : $balanceNumber($number);
+        $data["correctAnswer"] = $balanceNumber($number);
         return $data;
     };
 
