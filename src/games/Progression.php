@@ -24,12 +24,11 @@ function run()
     $getGameData = function () {
         $data = [];
         $progression = createProgression();
-        $hiddenValue = $progression[rand(0, 9)];
-        $hiddenIndex = array_search($hiddenValue, $progression);
+        $hiddenIndex = rand(0, 9);
+        $data["correctAnswer"] = $progression[$hiddenIndex];
         $progression[$hiddenIndex] = "..";
-        $question = implode(" ", $progression);
+        $question = implode(' ', $progression);
         $data["question"] = "{$question}";
-        $data["correctAnswer"] = $hiddenValue;
         return $data;
     };
 
