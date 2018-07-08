@@ -25,7 +25,7 @@ function run()
     $getGameData = function () {
         $data = [];
         $question = rand(1, 100);
-        $data["question"] = "{$question}";
+        $data["question"] = $question;
         $data["correctAnswer"] = isPrime($question) ? "yes" : "no";
         return $data;
     };

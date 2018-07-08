@@ -28,7 +28,7 @@ function run()
         $data["correctAnswer"] = $progression[$hiddenIndex];
         $progression[$hiddenIndex] = "..";
         $question = implode(' ', $progression);
-        $data["question"] = "{$question}";
+        $data["question"] = $question;
         return $data;
     };
 

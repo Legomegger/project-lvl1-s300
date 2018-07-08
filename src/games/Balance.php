@@ -23,7 +23,7 @@ function run()
     $getGameData = function () {
         $data = [];
         $number = rand(10, 9999);
-        $data["question"] = "{$number}";
+        $data["question"] = $number;
         $data["correctAnswer"] = balanceNumber($number);
         return $data;
     };
